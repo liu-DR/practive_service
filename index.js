@@ -36,7 +36,7 @@ app.use(cors()); // 注入cors模块解决跨域
 // app.use(interceptor);
 
 for (const route of arrRoutes) {
-    app.use(route.path, require(route.component));
+    app.use(route.path, route.component);
 }
 app.use(router);
 
