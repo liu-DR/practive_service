@@ -1,6 +1,5 @@
 const { mysqlQuery, response } = require('../utils/help');
 
-
 /**
  * 登录
  * POST /chat/user/login
@@ -16,10 +15,10 @@ const loginApi = async (req, res, next) => {
     const dataList = await mysqlQuery(loginSql, res);
 
     if(dataList?.length){
-        response(res, 200, dataList, '登录成功')
+        response(res, 200, dataList, '')
         return;
     }
-    response(res, 200, '', '用户名或密码不正确')
+    response(res, 200, null, '用户名或密码不正确')
 }
 
 module.exports = {

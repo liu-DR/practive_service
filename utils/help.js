@@ -12,7 +12,7 @@ const response = (res, status, data, msg) => {
     res.status(status).json({
         code: status,
         data: data || null,
-        message: msg
+        message: msg || '成功'
     })
 }
 
